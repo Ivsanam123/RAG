@@ -1,3 +1,4 @@
+
 # app/api.py
 from __future__ import annotations
 import asyncio, time
@@ -64,10 +65,14 @@ async def ask(q: Ask):
     
     #TODO: Call RAG
    
-    
+    answer,docs = await answer_with_docs_async(q.question)
 
     elapsed = time.perf_counter() - start
     print(f"⏱️ /ask execution took {elapsed:.2f} seconds")
     
+    return {
+        "answer": answer,
+        "source": docs
+    }
 
     
