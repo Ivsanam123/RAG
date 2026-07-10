@@ -36,12 +36,12 @@ class Ask(BaseModel):
 async def root_page():
     return FileResponse(static_dir / "index.html")
 
+
+
 async def _ingest_job():
     _ingest_last.update({"status": "running", "started_at": time.time(), "finished_at": None, "stats": None, "error": None})
     try:
-        #TODO: RUN INGESTION
-        stats = None
-
+        stats = await run_ingest_async()
         _ingest_last.update({"status": "succeeded", "finished_at": time.time(), "stats": stats})
     except Exception as e:
         _ingest_last.update({"status": "failed", "finished_at": time.time(), "error": str(e)})
@@ -52,7 +52,7 @@ async def kick_off_ingest():
     async with _ingest_lock:
         if _ingest_task and not _ingest_task.done():
             return JSONResponse({"ok": False, "message": "Ingestion already running"}, status_code=409)
-        #TODO: Create Ingestion Task
+        _ingest_task = asyncio.create_task(_ingest_job())
     return {"ok": True, "message": "Ingestion started"}
 
 @app.get("/ingest/status")

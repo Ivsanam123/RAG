@@ -32,11 +32,12 @@ PROMPT = ChatPromptTemplate.from_messages([
      "Rule: Prefer the most recent policy by effective date.")
 ])
 
-async def _build_chain(): #this is only called once so we dont havet ot build the chain every time??
+async def _build_chain():
     store = await get_vector_store()
-    retriever = store.as_retriever(search_kwargs={"k":os.getenv("RETRIEVAL_K")})
-    llm = ChatOpenAI(model = "gpt-4o-mini") #here llm is a callable object which wraps the OpenAI API. 
-    doc_chain = create_stuff_documents_chain(llm, PROMPT) #where is he getting all of these functions is it langchani, do i need to learn langchain for placements, 
+    k = int(os.getenv("RETRIEVAL_K", "4"))
+    retriever = store.as_retriever(search_kwargs={"k": k})
+    llm = ChatOpenAI(model = "gpt-4o-mini")
+    doc_chain = create_stuff_documents_chain(llm, PROMPT)
     rag_chain = create_retrieval_chain(retriever, doc_chain)
 
     return rag_chain
