@@ -5,10 +5,10 @@ from langchain_postgres.v2.async_vectorstore import AsyncPGVectorStore
 
 PG_CONN_STR = os.getenv("DATABASE_URL")
 
-
 PG_ENGINE = PGEngine.from_connection_string(PG_CONN_STR)
 
 embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
+
 
 async def get_vector_store()->AsyncPGVectorStore:
     return await AsyncPGVectorStore.create(
