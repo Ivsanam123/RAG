@@ -65,8 +65,8 @@ def _load_docs(base: str = DATA_DIR) -> List[Document]:
 
 def _chunk(docs: List[Document]) -> List[Document]:
     splitter = RecursiveCharacterTextSplitter(
-        chunk_size = 900,
-        chunk_overlap = 120
+        chunk_size = 1500,
+        chunk_overlap = 200
     )
     try:
         return splitter.split_documents(docs)
