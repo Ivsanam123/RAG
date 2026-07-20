@@ -1,1 +1,39 @@
 answer, question
+"What is Agentic Vibe Design (AVD)?", "AVD is a conceptual four-tier AI stack proposed for seamless construction automation. It combines conversational prototyping, design-to-BIM generation, AI-assisted coding, and autonomous agentic execution into one workflow."
+"What are the four tiers of AVD?", "The four tiers are no-code full-stack builders, design-first tools, AI-enhanced IDEs, and autonomous AI engineers. Each tier represents a higher level of AI capability, moving from rapid prototyping to fully agent-driven construction orchestration."
+"Why does the paper propose combining these four AI tiers into one architecture?", "The paper argues that construction workflows are too fragmented when design, coding, scheduling, and site execution are handled separately. By unifying them, AVD creates a continuous closed loop where prompts, models, and on-site actions can feed into each other more smoothly."
+"What example prompt is given for handling crane downtime in the steel-frame scenario?", "The paper gives a prompt about crane C1 being unexpectedly offline for about 4 hours due to a mechanical issue. It asks the agent to recalculate the steel erection sequence for Bay 2, Sector A, identify critical path impacts, and propose mitigation options to the site manager."
+
+"What are the six key aspects of Agentic AI?", "The six key aspects are: Autonomy, Goal-oriented Behavior, Environmental Interaction, Learning Capability, Workflow Optimization, and Multi-agent Systems"
+"Which four industries are listed as major application areas of Agentic AI?", "The paper identifies Energy, Transportation, Healthcare, and Finance"
+"How does Agentic AI differ from traditional AI?", "Traditional AI mainly performs predefined tasks and often requires human intervention. Agentic AI is autonomous, goal-oriented, adapts to dynamic environments, learns from experience, collaborates with other agents, and makes decisions independently. These capabilities allow it to optimize workflows and support intelligent decision-making across industries."
+"What are the two stages of the paper's GenAI deployment strategy, and which tools are recommended for each?", "The strategy has two stages:
+Prototype and Proof of Concept (PoC):
+Uses open-source tools such as AutoGPT and AutoGen.
+Focuses on simple, high-impact use cases and refining solutions through testing.
+Scalable Deployment:
+Uses commercial platforms such as LangGraph and CrewAI.
+Integrates GenAI with enterprise systems (e.g., ERP/CRM) for large-scale deployment while continuously monitoring performance."
+
+"What are the three main parts of Michael Grieves' 2011 digital twin conceptual model?", "The three parts are:
+Real-space physical entity
+Virtual-space digital model
+Data and information interface connecting the two"
+"What are the three implementation stages of digital twin technology discussed in the paper?","Product design stage
+Production stage
+Product service (use and maintenance) stage"
+"How does a digital twin differ from a digital thread?", "A digital twin is a virtual representation of a physical product that mirrors its real-time state, behavior, and lifecycle using sensor and historical data. A digital thread is the continuous flow of digital information across a product's lifecycle, connecting design, manufacturing, operation, and maintenance. In short, the digital thread enables data continuity, while the digital twin uses that data to model, monitor, simulate, and optimize the physical asset."
+"What are the three major components of the digital twin framework during the production stage?", "The framework consists of:
+Real-time collection of multisource manufacturing data from the physical environment.
+Continuous evolution and updating of digital twin models in virtual space using the collected data.
+Status monitoring, prediction, optimization, and closed-loop feedback control based on the digital twin to improve production quality, scheduling, and resource utilization."
+
+"How many studies did the review analyze, and what methodology did it follow?", " The review analyzed 42 high-impact studies and followed the PRISMA methodology. It used this systematic approach to identify, screen, and synthesize research on digital twins and AI in the energy sector."
+"What are two major application areas of digital twins in the energy sector mentioned in the paper?", "The paper highlights applications such as microgrids and solar energy systems. It also discusses predictive maintenance, energy forecasting, smart grids, and cybersecurity as major application areas"
+"Why does the paper argue that digital twins and AI are important for the energy transition?", "The paper argues that they enable real-time monitoring, prediction, and optimization of energy systems, which improves efficiency and sustainability. They also help manage renewable intermittency, reduce downtime, and support better decision-making across the energy value chain."
+"What specific quantitative benefits does the abstract report for AI-powered digital twin models?", "The abstract reports a 35 percent reduction in unplanned downtime, an 8.5 percent increase in energy production, 98.3 percent accuracy in fault detection, and a 26.2 percent reduction in energy costs. These figures are presented as evidence of the practical value of AI-powered digital twins in energy systems."
+
+"What are the three levels of integration in Digital Twin technology?", "Digital Shadow, Digital Model, Digital Twin"
+"What are the three main implementation stages of a Digital Twin?", "Product design and prototyping ,Production and manufacturing, Product service (operation and maintenance)"
+"How is a Digital Twin different from a Digital Shadow?", "A Digital Shadow has a one-way automatic data flow from the physical object to the digital model, so only changes in the physical object are reflected digitally. A Digital Twin has a bidirectional automatic data flow, meaning changes in either the physical or digital system are synchronized with the other, enabling real-time monitoring, prediction, and control."
+"What are the main challenges to implementing Digital Twin technology?", "The paper identifies five major challenges: Novelty of the technology and lack of expertise, High implementation cost and time requirements, Lack of standards and regulations, Data-related issues such as privacy, interoperability, governance, and cybersecurity, Life-cycle mismatching between long-lived assets and rapidly evolving software technologies"
