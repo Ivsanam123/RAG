@@ -17,7 +17,8 @@ from langchain_classic.retrievers import ContextualCompressionRetriever
 
 SYSTEM = """You are a grounded company knowledge assistant.
 Always base answers strictly on the provided context.
-If the answer isn't present, reply with "I don't know."
+If the context contains relevant information, answer using it even if it's not phrased as a list.
+Only reply "I don't know" if the context has no relevant information at all.
 Respond concisely and clearly.
 """
 
@@ -31,12 +32,12 @@ PROMPT = ChatPromptTemplate.from_messages([
 
 async def _build_chain(category : str = None):
     store = await get_vector_store()  
-    search_kwargs={"k": int(os.getenv("RETRIEVAL_K","5"))}
+    search_kwargs={"k": int(os.getenv("RETRIEVAL_K","10"))}
     if category:
         search_kwargs["filter"] = {"category":category}
     base_retriever = store.as_retriever(search_kwargs=search_kwargs)
     compressor = CohereRerank(
-        top_n = 3,
+        top_n = 5,
         model = "rerank-multilingual-v3.0"
     )
     retriever = ContextualCompressionRetriever(
